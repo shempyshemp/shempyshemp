@@ -30,6 +30,8 @@ client.on("ready", () => {
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
+
+
 client.on("message", async (message) => {
     const logging = client.channels.cache.get(config.LogChannel);
     const guild = client.guilds.cache.get(config.serverID);
@@ -71,9 +73,21 @@ client.on("message", async (message) => {
             var args2 = args.join(' ')
 
                 ; (await client.users.fetch(userId)).send(args2)
+// client.on('message', message => {
+if (!message.content.startsWith(prefix) || message.author.bot) return;
 
+const args = message.content.slice(prefix.length).trim().split(' ');
+const command = args.shift().toLowerCase();
+// the rest of your code
+// you can switch your other commands to this format as well
+else if (command === 'args-info') {
+	if (!args.length) {
+		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	}
 
-
+	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+}
+// -----------------------------
         }
         else {
             message.author.send("<:no:810251418690519141> something went wrong")
