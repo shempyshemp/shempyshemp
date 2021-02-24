@@ -263,7 +263,7 @@ client.on("message", async (message) => {
     }
 
     if (command === 'shop')
-     guild.channels.create("shop-" + message.author.username.toLowerCase());, {
+     guild.channels.create('shop-' + message.author.username.toLowerCase());, {
        type: 'text',
        permissionOverwrites: [
           {
