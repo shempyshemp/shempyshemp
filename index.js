@@ -19,6 +19,7 @@ const activities_list = [
 
 
 client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.cache.find(ch => ch.id === '798296513360298037');
         const welcomeEmbed = new MessageEmbed()
             .setTitle(`**Welcome**`)
             .setDescription('(`Welcome to the server, ${member}.`);')
