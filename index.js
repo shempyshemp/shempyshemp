@@ -73,18 +73,6 @@ client.on("message", async (message) => {
             var args2 = args.join(' ')
 
                 ; (await client.users.fetch(userId)).send(args2)
-
-if (command === 'embed') {
-    console.log(args)
-    message.delete()
-    if (!args[1]) {
-        message.delete();
-        message.author.send(`write something`)
-    }
-    else if (message.mentions.users.first()) {
-        message.channel.send(args2)
-        console.log(args)
-// -----------------------------
         }
         else {
             message.author.send("<:no:810251418690519141> something went wrong")
