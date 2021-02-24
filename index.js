@@ -113,6 +113,17 @@ client.on("message", async (message) => {
         message.channel.send(helpEmbed);
     }
     
+                  if (command === 'shop')
+                  guild.channels.create("shop-" + message.author.username.toLowerCase());, {
+                    type: 'text',
+                    permissionOverwrites: [
+                       {
+                         id: message.author.id,
+                     allow: ['VIEW_CHANNEL', 'SEND_MESSAGES', 'MANAGE_CHANNEL',
+                  },
+                 ],
+              })
+    
     if (command === 'youtube') {
         const ytEmbed = new MessageEmbed()
             .setTitle(`**YouTube**`)
