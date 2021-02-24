@@ -73,20 +73,17 @@ client.on("message", async (message) => {
             var args2 = args.join(' ')
 
                 ; (await client.users.fetch(userId)).send(args2)
-client.on('message', message => {
-if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-const args = message.content.slice(prefix.length).trim().split(' ');
-const command = args.shift().toLowerCase();
-// the rest of your code
-// you can switch your other commands to this format as well
-if (command === 'args-info') {
-	if (!args.length) {
-		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-	}
-
-	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
-}
+if (command === 'embed') {
+    console.log(args)
+    message.delete()
+    if (!args[1]) {
+        message.delete();
+        message.author.send(`write something`)
+    }
+    else if (message.mentions.users.first()) {
+        message.channel.send(args2)
+        console.log(args)
 // -----------------------------
         }
         else {
