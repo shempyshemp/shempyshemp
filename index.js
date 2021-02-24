@@ -12,8 +12,6 @@ const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
 const activities_list = [
-    "with tickets",
-    "your sister",
     "with Prett's Art Cafe",
 ];
 
