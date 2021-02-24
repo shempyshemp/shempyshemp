@@ -230,7 +230,7 @@ client.on("message",async message=>{
                 type:"text",
                 parent:TicketCategory.id,
                 permissionOverwrites:perms
-            }).then(channel=>channel.send(reason))
+            })
             break;
               });
     
