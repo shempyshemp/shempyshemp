@@ -358,13 +358,12 @@ client.on("message", message => {
     }
    
     if (command === 'socials') {
-                const socialEmbed = new MessageEmbed()
-                    .setTitle(`**Socials**`)
-                    .setFooter(`z.help`)
-                    .setColor(`${embedC}`)
-                    .setDescription('[Tiwtter](https://discordjs.guide/ 'optional hovertext')\n[Instagram](https://discordjs.guide/ 'optional hovertext')\n[YouTube](https://discordjs.guide/ 'optional hovertext')')
-                message.channel.send(socialEmbed);
-            }
+        const socialEmbed = new MessageEmbed()
+            .setTitle(`**Socials**`)
+            .setDescription('[Tiwtter](https://discordjs.guide/ 'optional hovertext')\n[Instagram](https://discordjs.guide/ 'optional hovertext')\n[YouTube](https://discordjs.guide/ 'optional hovertext')')
+            .setFooter(`z.socials`)
+            .setColor(`${embedC}`)
+        message.channel.send(socialEmbed);
     
     if (command === "purge") {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("i do not have permission`)").then(msg => {
