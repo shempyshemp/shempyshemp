@@ -11,10 +11,6 @@ const embedP = config.EmbedPfp;
 const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
-const activities_list = [
-    "with Prett's Art Cafe",
-];
-
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.id === '798296513360298037');
@@ -30,10 +26,6 @@ client.on('guildMemberAdd', member => {
   });
 
 client.on("ready", () => {
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
-        client.user.setActivity(activities_list[index])
-    }, 100000);
     client.user.setActivity('with Prett's Art Cafe')
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
