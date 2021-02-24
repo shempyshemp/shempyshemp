@@ -30,8 +30,6 @@ client.on("ready", () => {
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
-
-
 client.on("message", async (message) => {
     const logging = client.channels.cache.get(config.LogChannel);
     const guild = client.guilds.cache.get(config.serverID);
@@ -73,6 +71,9 @@ client.on("message", async (message) => {
             var args2 = args.join(' ')
 
                 ; (await client.users.fetch(userId)).send(args2)
+
+
+
         }
         else {
             message.author.send("<:no:810251418690519141> something went wrong")
@@ -113,8 +114,6 @@ client.on("message", async (message) => {
         message.channel.send(helpEmbed);
     }
     
-
-    
     if (command === 'youtube') {
         const ytEmbed = new MessageEmbed()
             .setTitle(`**YouTube**`)
@@ -132,6 +131,7 @@ client.on("message", async (message) => {
             .setColor(`${embedC}`)
         	.setURL('http://www.instagram.com/prettsartcafe')
         message.channel.send(igEmbed);
+    }
     
     if (message.channel.type !== ('dm')) {
         if (command == "close" && message.channel.name.startsWith('ticket-')) {
@@ -261,6 +261,7 @@ client.on("message", async (message) => {
         message.channel.send(NewTicket);
     }
 
+});
 
 client.on('guildMemberRemove', async (member) => {
     const logging = client.channels.cache.get(config.LogChannel);
@@ -356,6 +357,15 @@ client.on("message", message => {
     
     }
    
+    if (command === 'socials') {
+                const socialEmbed = new MessageEmbed()
+                    .setTitle(`**Socials**`)
+                    .setFooter(`z.help`)
+                    .setColor(`${embedC}`)
+                    .setDescription('[Tiwtter](https://discordjs.guide/ 'optional hovertext')\n[Instagram](https://discordjs.guide/ 'optional hovertext')\n[YouTube](https://discordjs.guide/ 'optional hovertext')')
+                message.channel.send(socialEmbed);
+            }
+    
     if (command === "purge") {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("i do not have permission`)").then(msg => {
         msg.delete({ timeout: 30000 })
