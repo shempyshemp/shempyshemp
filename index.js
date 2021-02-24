@@ -19,9 +19,15 @@ const activities_list = [
 
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.cache.find(ch => ch.name === 'join-leave');
+        const welcomeEmbed = new MessageEmbed()
+            .setTitle(`**Welcome**`)
+            .setDescription('(`Welcome to the server, ${member}.`);')
+            .setThumbnail('https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif')
+            .setFooter(`Member Joined`)
+            .setColor(`${embedC}`)
+            .setAuthor(`${embedA}`, `${embedP}`)
     if (!channel) return;
-    channel.send(`Welcome to the server, ${member}`);
+    message.channel.send(welcomeEmbed);
   });
 
 client.on("ready", () => {
