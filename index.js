@@ -276,8 +276,6 @@ client.on('guildMemberRemove', async (member) => {
         	.setAuthor('Facebook', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'url')
          message.channel.send(fbEmbed);
     }
-    if (command === 'fb') {
-         message.channel.send(fbEmbed);
     }
     if (command === 'twitter') {
         const twitterEmbed = new MessageEmbed()
@@ -296,9 +294,6 @@ client.on('guildMemberRemove', async (member) => {
             .setColor(`${embedC}`)
         	.setAuthor('Youtube', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA')
         message.channel.send(ytEmbed);
-    }
-    if (command === 'yt') {
-         message.channel.send(ytEmbed);
     }
 
 client.on("message", message => {
