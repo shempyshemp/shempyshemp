@@ -34,7 +34,7 @@ client.on("ready", () => {
         const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
         client.user.setActivity(activities_list[index])
     }, 100000);
-    client.user.setActivity('starting up - by neu#2294')
+    client.user.setActivity('with Prett's Art Cafe')
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
