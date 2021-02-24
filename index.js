@@ -272,8 +272,6 @@ client.on("message", async (message) => {
      },
     ],
   })
-    
-});
 
 client.on('guildMemberRemove', async (member) => {
     const logging = client.channels.cache.get(config.LogChannel);
