@@ -113,6 +113,36 @@ client.on("message", async (message) => {
 
         message.channel.send(helpEmbed);
     }
+    
+        if (command === 'facebook') {
+        const fbEmbed = new MessageEmbed()
+            .setTitle(`**Facebook**`)
+            .setDescription('')
+            .setFooter(`z.facebook`)
+            .setColor(`${embedC}`)
+        	.setAuthor('Facebook', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'http://neu.rf.gd')
+         message.channel.send(fbEmbed);
+    }
+
+    if (command === 'twitter') {
+        const twitterEmbed = new MessageEmbed()
+            .setTitle(`**Twitter**`)
+
+            .setFooter(`z.help`)
+            .setColor(`${embedC}`)
+            .setAuthor('Twitter', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'http://neu.rf.gd')
+        message.channel.send(twitterEmbed);
+    }
+    
+    if (command === 'youtube') {
+        const ytEmbed = new MessageEmbed()
+            .setTitle(`**YouTube**`)
+            .setFooter(`z.help`)
+            .setColor(`${embedC}`)
+        	.setAuthor('Youtube', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA')
+        message.channel.send(ytEmbed);
+    }
+    
     if (message.channel.type !== ('dm')) {
         if (command == "close" && message.channel.name.startsWith('ticket-')) {
             var ret = message.channel.topic
@@ -267,34 +297,7 @@ client.on('guildMemberRemove', async (member) => {
 
 });
 
-    if (command === 'facebook') {
-        const fbEmbed = new MessageEmbed()
-            .setTitle(`**Facebook**`)
-            .setDescription('')
-            .setFooter(`z.facebook`)
-            .setColor(`${embedC}`)
-        	.setAuthor('Facebook', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'url')
-         message.channel.send(fbEmbed);
-    }
-    }
-    if (command === 'twitter') {
-        const twitterEmbed = new MessageEmbed()
-            .setTitle(`**Twitter**`)
-            .setDescription('')
-            .setFooter(`z.help`)
-            .setColor(`${embedC}`)
-            .setAuthor('Twitter', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'url')
-        message.channel.send(twitterEmbed);
-    }
-    if (command === 'youtube') {
-        const ytEmbed = new MessageEmbed()
-            .setTitle(`**YouTube**`)
-            .setDescription('')
-            .setFooter(`z.help`)
-            .setColor(`${embedC}`)
-        	.setAuthor('Youtube', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA')
-        message.channel.send(ytEmbed);
-    }
+
 
 client.on("message", message => {
     if (message.author.bot) return;
