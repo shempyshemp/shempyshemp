@@ -132,7 +132,6 @@ client.on("message", async (message) => {
             .setColor(`${embedC}`)
         	.setURL('http://www.instagram.com/prettsartcafe')
         message.channel.send(igEmbed);
-    }
     
     if (message.channel.type !== ('dm')) {
         if (command == "close" && message.channel.name.startsWith('ticket-')) {
@@ -262,16 +261,6 @@ client.on("message", async (message) => {
         message.channel.send(NewTicket);
     }
 
-    if (command === 'shop')
-     guild.channels.create('shop- + message.author.username.toLowerCase())', {
-       type: 'text',
-       permissionOverwrites: [
-          {
-             id: message.author.id,
-       allow: ['VIEW_CHANNEL', 'SEND_MESSAGES', 'MANAGE_CHANNEL',
-     },
-    ],
-  })
 
 client.on('guildMemberRemove', async (member) => {
     const logging = client.channels.cache.get(config.LogChannel);
