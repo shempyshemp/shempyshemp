@@ -73,7 +73,7 @@ client.on("message", async (message) => {
             var args2 = args.join(' ')
 
                 ; (await client.users.fetch(userId)).send(args2)
-// client.on('message', message => {
+client.on('message', message => {
 if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 const args = message.content.slice(prefix.length).trim().split(' ');
