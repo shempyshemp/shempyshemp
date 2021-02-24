@@ -106,7 +106,7 @@ client.on("message", async (message) => {
     if (command === 'help') {
         const helpEmbed = new MessageEmbed()
             .setTitle(`__**${config["bot-name"]} - Help**__`)
-            .setDescription('**Commands:**\n`z.help` ~ Gives a list of commands\n`z.gd (text)` ~ Pixellated text\n`z.close` ~ Close a ticket\n`z.msg` ~ instructions for support\n`z.dm` ~ Direct messages a user\n`z.rps` ~ rock, paper, scissors\n`z.say` ~ Put words in my mouth\n`z.ban` ~ Bans a user\n`z.kick` ~ Kicks a member\n`z.purge` - Mass delete messages')
+            .setDescription('**Commands:**\n`z.help` ~ Gives a list of commands\n`z.gd (text)` ~ Pixellated text\n`z.close` ~ Close a ticket\n`z.msg` ~ instructions for support\n`z.dm` ~ Direct messages a user\n`z.rps` ~ rock, paper, scissors\n`z.say` ~ Put words in my mouth\n`z.twitter` - Shows twitter URL\n`z.youtube` - Shows YouTube URL\n`z.instagram` - shows instagram URL\n`z.ban` ~ Bans a user\n`z.kick` ~ Kicks a member\n`z.purge` - Mass delete messages')
             .setFooter(`z.help`)
             .setColor(`${embedC}`)
             .setAuthor(`${embedA}`, `${embedP}`)
@@ -114,33 +114,23 @@ client.on("message", async (message) => {
         message.channel.send(helpEmbed);
     }
     
-        if (command === 'facebook') {
-        const fbEmbed = new MessageEmbed()
-            .setTitle(`**Facebook**`)
-            .setDescription('')
-            .setFooter(`z.facebook`)
-            .setColor(`${embedC}`)
-        	.setAuthor('Facebook', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'http://neu.rf.gd')
-         message.channel.send(fbEmbed);
-    }
-
-    if (command === 'twitter') {
-        const twitterEmbed = new MessageEmbed()
-            .setTitle(`**Twitter**`)
-
-            .setFooter(`z.help`)
-            .setColor(`${embedC}`)
-            .setAuthor('Twitter', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'http://neu.rf.gd')
-        message.channel.send(twitterEmbed);
-    }
-    
     if (command === 'youtube') {
         const ytEmbed = new MessageEmbed()
             .setTitle(`**YouTube**`)
+            .setDescription('')
             .setFooter(`z.help`)
             .setColor(`${embedC}`)
-        	.setAuthor('Youtube', 'https://cdn.discordapp.com/attachments/798298389128151060/798301926721716264/image0.gif', 'https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA')
+        	.setURL('https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA')
         message.channel.send(ytEmbed);
+    }
+
+    if (command === 'instagram') {
+        const igEmbed = new MessageEmbed()
+            .setTitle(`**Instagram**`)
+            .setFooter(`z.help`)
+            .setColor(`${embedC}`)
+        	.setURL('http://www.instagram.com/prettsartcafe')
+        message.channel.send(igEmbed);
     }
     
     if (message.channel.type !== ('dm')) {
