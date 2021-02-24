@@ -1,12 +1,12 @@
 { 
     "prefix" : ".",
-    "bot-name" : "pipSMPbot",
-    "serverID" : "802722040494161930",
-    "ModeratorRoles" : ["802722822106906625", "810397500179349505"], 
-    "EmbedAuthor" : "pipSMPbot modmail",
-    "Category" : "811508878097383446",
-    "LogChannel" : "810384619605983263",
-    "EmbedPfp" : "https://i.imgur.com/WVYPdkK.png",
-    "EmbedColour" : "#a60100",
-    "token" : "ODEzNDkxMTgzMzk3MTA5Nzkw.YDQEtA.DdAnfd0wl_e7AqQUDIy-GDB2qfA"
+    "bot-name" : "Zaia",
+    "serverID" : "798296513360298034",
+    "ModeratorRoles" : ["798596637462626374", "805813418027253780", "798636569572409395"], 
+    "EmbedAuthor" : "Zaia Modmail",
+    "Category" : "813965502224662530",
+    "LogChannel" : "813965643534827561",
+    "EmbedPfp" : "https://i.imgur.com/HO35WJa.jpg",
+    "EmbedColour" : "#ccf5ff",
+    "token" : "ODEzODM3OTI3MzE4NjgzNjQ4.YDVHog.XsCWICbb31s6KtKs6KvA_RyCjXQ"
 }
