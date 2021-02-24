@@ -364,6 +364,7 @@ client.on("message", message => {
             .setFooter(`z.socials`)
             .setColor(`${embedC}`)
         message.channel.send(socialEmbed);
+    }
     
     if (command === "purge") {
     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("i do not have permission`)").then(msg => {
