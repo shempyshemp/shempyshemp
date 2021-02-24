@@ -106,7 +106,7 @@ client.on("message", async (message) => {
     if (command === 'help') {
         const helpEmbed = new MessageEmbed()
             .setTitle(`__**${config["bot-name"]} - Help**__`)
-            .setDescription('**Commands:**\n`z.help` ~ Gives a list of commands\n`z.gd (text)` ~ Pixellated text\n`z.close` ~ Close a ticket\n`z.msg` ~ instructions for support\n`z.dm` ~ Direct messages a user\n`z.rps` ~ rock, paper, scissors\n`z.say` ~ Put words in my mouth\n`z.twitter` - Shows twitter URL\n`z.youtube` - Shows YouTube URL\n`z.instagram` - shows instagram URL\n`z.ban` ~ Bans a user\n`z.kick` ~ Kicks a member\n`z.purge` - Mass delete messages')
+            .setDescription('**Commands:**\n`z.help` ~ Gives a list of commands\n`z.socials` - gives a list of socials\n`z.gd (text)` ~ Pixellated text\n`z.close` ~ Close a ticket\n`z.msg` ~ instructions for support\n`z.dm` ~ Direct messages a user\n`z.rps` ~ rock, paper, scissors\n`z.say` ~ Put words in my mouth\n`z.twitter` - Shows twitter URL\n`z.youtube` - Shows YouTube URL\n`z.instagram` - shows instagram URL\n`z.ban` ~ Bans a user\n`z.kick` ~ Kicks a member\n`z.purge` - Mass delete messages')
             .setFooter(`z.help`)
             .setColor(`${embedC}`)
             .setAuthor(`${embedA}`, `${embedP}`)
@@ -172,7 +172,68 @@ client.on("message", async (message) => {
             }
         }
     }
-
+client.on("message",async message=>{
+    if(message.author.bot||message.type=="dm")return;
+    var arg = message.content.toLowerCase().split(" ");
+    if(arg[0]!='!shop')return;
+    if(!message.guild.me.hasPermission("MANAGE_CHANNELS")||!message.guild.me.hasPermission("MANAGE_ROLES")){
+        message.channel.send("> error: I need MANAGE_CHANNELS and MANAGE_ROLES premission.");
+        return;
+    }
+    let TicketCategory = message.guild.channels.find(channel=>channel.name==="Open ╭╼|═══𝐒𝐡𝐨𝐩𝐬═══|╾╮");
+    if(TicketCategory==null){
+        await message.guild.createChannel('╭╼|═══𝐒𝐡𝐨𝐩𝐬═══|╾╮', {
+            type: 'category',
+            permissionOverwrites: [{
+              id: message.guild.id,
+              allow: ['READ_MESSAGES']
+            }]
+          })
+          .then(t=>TicketCategory=t)
+          .catch(console.error);
+    }
+    switch (arg[1]) {
+        case "shop":
+            if(arg.length<=2){
+                message.reply("> Incorrect usage. Please type `z.shop [Shop Name]`");
+                return;
+            }
+            let reason = arg.slice(2).join(" ");
+            // reason=message.author+" issued a ticket with the reason\n\n**"+reason+"**";
+            message.channel.send('<@798636569572409395>');
+            reason = new Discord.RichEmbed()
+            .setTitle("User "+message.author.username+" made a shop!!")
+            .setDescription(reason)
+            .setFooter("z.shop")
+            .setColor('#32cd32');
+            let roles = message.guild.roles.filter(x=>x.hasPermission("VIEW_CHANNELS"));
+            let perms=[];
+            roles.forEach(role => {
+               perms.push( 
+                    {
+                        id:role.id,
+                        allow:["READ_MESSAGES"]
+                    }
+                )
+              });
+              perms.push(
+                    {
+                        id:message.guild.id,
+                        allow: ["SEND_MESSAGES"]
+                    },
+                    {
+                        id: message.author.id,
+                        allow:["MANAGE_CHANNEL"]
+                    }
+              );
+            message.guild.createChannel(reason),{
+                type:"text",
+                parent:TicketCategory.id,
+                permissionOverwrites:perms
+            }).then(channel=>channel.send(reason))
+            break;
+              });
+    
     if (message.channel.type === "dm") {
         if (command === 'close' && findchannel) {
             const embed = new MessageEmbed()
