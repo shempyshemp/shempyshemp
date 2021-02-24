@@ -114,6 +114,17 @@ client.on("message", async (message) => {
         message.channel.send(helpEmbed);
     }
     
+        if (command === 'socials') {
+        const socialEmbed = new MessageEmbed()
+            .setTitle(`<:prettsartcafeheart:814202383000797195> Socials <:prettsartcafeheart:814202383000797195>`)
+            .setDescription('[Intstagram](https://www.instagram.com/prettsartcafe)\n[Twitter](twitter.com/prettsartcafe)\n[Facebook](https://com.com)\n[YouTube](https://youtube.com/channel/UCL1Ylvw6rkOb_0xJBEjfGxA)')
+            .setFooter(`z.socials`)
+            .setColor(`${embedC}`)
+            .setAuthor(`${embedA}`, `${embedP}`)
+
+        message.channel.send(socialEmbed);
+    }
+    
     if (command === 'youtube') {
         const ytEmbed = new MessageEmbed()
             .setTitle(`**YouTube**`)
