@@ -12,17 +12,9 @@ const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
 const activities_list = [
-    "with the .help command.",
-    "the dm game - .help",
-    "with tickets - .help",
-    "with the developer console - .help",
-    "on neu.rf.gd - .help",
-    "on neu.rf.gd/tg - .help",
-    "on neu.rf.gd/youtube - .help",
-    "with neumatic - .help",
-    "on pipsmp.tk:25592 - .help",
-    "the pip smp - .help",
-    "on neumatic's private webserver - .help",
+    "with tickets",
+    "your sister",
+    "with Prett's Art Cafe",
 ];
 
 
@@ -117,8 +109,8 @@ client.on("message", async (message) => {
     if (command === 'help') {
         const helpEmbed = new MessageEmbed()
             .setTitle(`__**${config["bot-name"]} - Help**__`)
-            .setDescription('**Commands:**\n`.help` - what does it sound like\n`.gd (text)` - cool text\n`.close` - close a ticket\n`.msg` - instructions for support\n`.dm` - dm a user\n`.rps` - rock, paper, scissors\n`.say` - put words in my mouth\n`.ban` - bans a member\n`.kick` - kicks a member\n`.purge` - mass delete messages')
-            .setFooter(`.help - by neumatic`)
+            .setDescription('**Commands:**\n`z.help` ~ Gives a list of commands\n`z.gd (text)` ~ Pixellated text\n`z.close` ~ Close a ticket\n`z.msg` ~ instructions for support\n`z.dm` ~ Direct messages a user\n`z.rps` ~ rock, paper, scissors\n`z.say` ~ Put words in my mouth\n`z.ban` ~ Bans a user\n`z.kick` ~ Kicks a member\n`z.purge` - Mass delete messages')
+            .setFooter(`z.help`)
             .setColor(`${embedC}`)
             .setAuthor(`${embedA}`, `${embedP}`)
 
