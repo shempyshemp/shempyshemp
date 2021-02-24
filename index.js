@@ -360,7 +360,7 @@ client.on("message", message => {
     if (command === 'socials') {
         const socialEmbed = new MessageEmbed()
             .setTitle(`**Socials**`)
-            .setDescription('[Tiwtter](https://discordjs.guide/ 'optional hovertext')\n[Instagram](https://discordjs.guide/ 'optional hovertext')\n[YouTube](https://discordjs.guide/ 'optional hovertext')')
+            .setDescription('[Tiwtter](https://discordjs.guide/)\n[Instagram](https://discordjs.guide/)\n[YouTube](https://discordjs.guide/)')
             .setFooter(`z.socials`)
             .setColor(`${embedC}`)
         message.channel.send(socialEmbed);
