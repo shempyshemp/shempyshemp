@@ -407,4 +407,4 @@ client.on("message", message => {
 });
 
 
-client.login(config.token);
+client.login("ODEzODM3OTI3MzE4NjgzNjQ4.YDVHog.vTr8e4aFr05l9jUQbWIxnZpWVTI");
