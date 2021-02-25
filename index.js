@@ -30,6 +30,77 @@ client.on("ready", () => {
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
+client.on("ready",()=>{
+    console.log("shop system is online!");
+    client.user.setActivity("development builds - v2");
+});
+
+client.on("message",async message=>{
+    if(message.author.bot||message.type=="dm")return;
+    var arg = message.content.toLowerCase().split(" ");
+    if(arg[0]!='z.shop')return;
+    if(!message.guild.me.hasPermission("MANAGE_CHANNELS")||!message.guild.me.hasPermission("MANAGE_ROLES")){
+        message.channel.send("Not enough permissions I require the `MANAGE_CHANNELS` and `MANAGE_ROLES` permission!");
+        return;
+    }
+    let TicketCategory = message.guild.channels.find(channel=>channel.id==="801527811042705438");
+    if(TicketCategory==null){
+        await message.guild.createChannel('name', {
+            type: 'category',
+            permissionOverwrites: [{
+              id: message.guild.id,
+              deny: ['READ_MESSAGES']
+            }]
+          })
+          .then(t=>TicketCategory=t)
+          .catch(console.error);
+    }
+    switch (arg[1]) {
+        case "create":
+            if(arg.length<=2){
+                message.reply("> Incorrect usage! pls type `z.shop create (shopName)`");
+                return;
+            }
+            console.log(message.author.username+" called command shop create");
+            let reason = arg.slice(2).join(" ");
+            // reason=message.author+" issued a ticket with the reason\n\n**"+reason+"**";
+            embedshop = new Discord.RichEmbed()
+            .setTitle("User "+message.author.username+" made a shop!")
+            .setDescription("__**Shop Owner:**__ <@"+message.author.id+">\n__**Shop Name:**__ "+reason+"\nWelcome to your shop.\nI have given you permission to manage this channel!")
+            .setFooter("")
+            .setColor('#cce6ff');
+            let roles = message.guild.roles.filter(x=>x.hasPermission("SEND_TTS_MESSAGES"));
+            let perms=[];
+            roles.forEach(role => {
+               perms.push( 
+                    {
+                        id:role.id,
+                        allow:["READ_MESSAGES"]
+                    }
+                )
+              });
+              perms.push(
+                    {
+                        id:message.guild.id,
+                        deny: ["READ_MESSAGES"]
+                    },
+                    {
+                        id: message.author.id,
+                        allow:["MANAGE_CHANNELS"]
+                    }
+              );
+            message.reply("i've made you a shop, check the shops category");
+            message.guild.createChannel(message.author.username+"`s shop",{
+                type:"text",
+                parent:TicketCategory.id,
+                permissionOverwrites:perms
+            }).then(channel=>channel.send(embedshop))
+            break;
+        default:
+            break;
+    }
+});
+
 client.on("message", async (message) => {
     const logging = client.channels.cache.get(config.LogChannel);
     const guild = client.guilds.cache.get(config.serverID);
