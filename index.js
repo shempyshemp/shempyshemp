@@ -136,7 +136,7 @@ client.on("message", async (message) => {
 
     if (command === 'instagram') {
         const igEmbed = new MessageEmbed()
-            .setTitle(`**Instagram**`)
+            .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼__𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦__∼ <:prettsartcafeheart:814202383000797195>˳°`)
             .setFooter(`z.help`)
             .setColor(`${embedC}`)
         	.setURL('http://www.instagram.com/prettsartcafe')
@@ -154,8 +154,8 @@ client.on("message", async (message) => {
                 .setAuthor(`${embedA}`, `${embedP}`)
             pq.send(embed)
             var Logging = new MessageEmbed()
-            .setTitle(`Ticket Closed`)
-            .setDescription(`${pq}'s ticket has been closed by ${message.author}`)
+            .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼__𝐓𝐢𝐜𝐤𝐞𝐭 𝐂𝐥𝐨𝐬𝐞𝐝__∼ <:prettsartcafeheart:814202383000797195>˳°`)
+            .setDescription(`${pq}'𝘴 𝘵𝘪𝘤𝘬𝘦𝘵 𝘩𝘢𝘴 𝘣𝘦𝘦𝘯 𝘤𝘭𝘰𝘴𝘦𝘥 𝘣𝘺 ${message.author}`)
             .setTimestamp()
             .setFooter(`${pq.username}#${pq.discriminator}`, `${pq.displayAvatarURL()}`)
             .setColor(`${embedC}`)
@@ -177,13 +177,13 @@ client.on("message", async (message) => {
     if (message.channel.type === "dm") {
         if (command === 'close' && findchannel) {
             const embed = new MessageEmbed()
-                .addField(`Ticket Closed`, `${message.author.username}#${message.author.discriminator} closed their ticket. this channel will be deleted in 8 seconds.`)
+                .addField(`°˳<:prettsartcafeheart:814202383000797195> ∼__𝐓𝐢𝐜𝐤𝐞𝐭 𝐂𝐥𝐨𝐬𝐞𝐝__∼ <:prettsartcafeheart:814202383000797195>˳°`, `${message.author.username}#${message.author.discriminator} closed their ticket. this channel will be deleted in 8 seconds.`)
                 .setTimestamp()
                 .setColor(`${embedC}`)
                 .setAuthor(`${embedA}`, `${embedP}`)
 
             findchannel.send(embed)
-            message.channel.send("You have closed your ticket.")
+            message.channel.send("𝘠𝘰𝘶 𝘩𝘢𝘷𝘦 𝘤𝘭𝘰𝘴𝘦𝘥 𝘺𝘰𝘶𝘳 𝘵𝘪𝘤𝘬𝘦𝘵.")
             var Logging = new MessageEmbed()
             .setTitle(`Ticket Closed`)
             .setDescription(`${message.author}'s ticket has been closed`)
@@ -223,13 +223,13 @@ client.on("message", async (message) => {
                 config.ModeratorRoles.map((role) => {
                     c.updateOverwrite(role, { VIEW_CHANNEL: true, SEND_MESSAGES: true, MANAGE_MESSAGES: true })
                 })
-                c.setTopic(message.author.id)
+                c.setTopic(message.author)
                 var Attachment = (message.attachments).array();
                 if (Attachment[0] !== undefined) {
                     var pp = ""
                     var pp1 = Attachment[0].url;
                     const Imgembed = new MessageEmbed()
-                        .setTitle(`<:yes:813826242448195585> new message from ${message.author.username}#${message.author.discriminator}`)
+                        .setTitle(`𝐍𝐞𝐰 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐟𝐫𝐨𝐦 ${message.author.username}#${message.author.discriminator}`)
                         .setTimestamp()
                         .setFooter('Type ?close to close the ticket')
                         .setImage(pp1)
@@ -237,8 +237,8 @@ client.on("message", async (message) => {
                         .setAuthor(`${embedA}`, `${embedP}`)
                     c.send(Imgembed);
                     var Logging = new MessageEmbed()
-                        .setTitle(`<:yes:813826242448195585> new ticket created`)
-                        .setDescription(`${message.author} has created a ticket in ${c}`)
+                        .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐍𝐞𝐰 𝐭𝐢𝐜𝐤𝐞𝐭 𝐜𝐫𝐞𝐚𝐭𝐞𝐝∼ <:prettsartcafeheart:814202383000797195>˳°`)
+                        .setDescription(`${message.author} 𝘩𝘢𝘴 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘢 𝘵𝘪𝘤𝘬𝘦𝘵 𝘪𝘯 ${c}`)
                         .setTimestamp()
                         .setFooter(`${message.author.username}#${message.author.discriminator}`, `${message.author.displayAvatarURL()}`)
                         .setColor(`${embedC}`)
@@ -247,15 +247,15 @@ client.on("message", async (message) => {
                 } else {
                     var pp = "";
                     const embed = new MessageEmbed()
-                        .addField(`<:yes:813826242448195585> reply from ${message.author.username}#${message.author.discriminator}`, message.content + " " + pp)
-                        .setFooter('type ?close to close the ticket')
+                        .addField(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐑𝐞𝐩𝐥𝐲 𝐟𝐫𝐨𝐦 ${message.author.username}#${message.author.discriminator}`, message.content + " " + pp∼ <:prettsartcafeheart:814202383000797195>˳°)
+                        .setFooter(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐓𝐲𝐩𝐞 𝐳.𝐜𝐥𝐨𝐬𝐞 𝐭𝐨 𝐜𝐥𝐨𝐬𝐞 𝐭𝐡𝐞 𝐭𝐢𝐜𝐤𝐞𝐭∼ <:prettsartcafeheart:814202383000797195>˳°`)
                         .setTimestamp()
-                        .setColor('#a60100')
+                        .setColor('#ccf5ff')
                         .setAuthor(`${embedA}`, `${embedP}`)
                     c.send(embed)
                     var Logging = new MessageEmbed()
-                        .setTitle(`new ticket created`)
-                        .setDescription(`${message.author} created a new ticket in ${c}`)
+                        .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐍𝐞𝐰 𝐭𝐢𝐜𝐤𝐞𝐭 𝐜𝐫𝐞𝐚𝐭𝐞𝐝∼ <:prettsartcafeheart:814202383000797195>˳°`)
+                        .setDescription(`${message.author} 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘢 𝘯𝘦𝘸 𝘵𝘪𝘤𝘬𝘦𝘵 𝘪𝘯 ${c}`)
                         .setTimestamp()
                         .setFooter(`${message.author.username}#${message.author.discriminator}`, `${message.author.displayAvatarURL()}`)
                         .setColor(`${embedC}`)
@@ -267,7 +267,7 @@ client.on("message", async (message) => {
         const NewTicket = new MessageEmbed()
             .setColor(`${embedC}`)
             .setAuthor(`${embedA}`, `${embedP}`)
-            .setTitle("**New Ticket Created!** <:yes:813826242448195585>")
+            .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐍𝐞𝐰 𝐓𝐢𝐜𝐤𝐞𝐭 𝐂𝐫𝐞𝐚𝐭𝐞𝐝∼ <:prettsartcafeheart:814202383000797195>˳°`)
             .setDescription('<:yes:813826242448195585> your ticket has been created and staff have been notified. To close your ticket use the command `.close`')
         message.channel.send(NewTicket);
     }
@@ -286,8 +286,8 @@ client.on('guildMemberRemove', async (member) => {
         }, 8000);
 
         var Logging = new MessageEmbed()
-        .setTitle(`ticket Closed`)
-        .setDescription(`${member.user.username}#${member.user.discriminator} left the server so their ticket was closed.`)
+        .setTitle(`°˳<:prettsartcafeheart:814202383000797195> ∼𝐓𝐢𝐜𝐤𝐞𝐭 𝐂𝐥𝐨𝐬𝐞𝐝∼ <:prettsartcafeheart:814202383000797195>˳°`)
+        .setDescription(`${member.user.username}#${member.user.discriminator} 𝘭𝘦𝘧𝘵 𝘵𝘩𝘦 𝘴𝘦𝘳𝘷𝘦𝘳 𝘴𝘰 𝘵𝘩𝘦𝘪𝘳 𝘵𝘪𝘤𝘬𝘦𝘵 𝘸𝘢𝘴 𝘤𝘭𝘰𝘴𝘦𝘥.`)
         .setTimestamp()
         .setFooter(`${member.user.username}#${member.user.discriminator}`, `${member.user.displayAvatarURL()}`)
         .setColor(`${embedC}`)
