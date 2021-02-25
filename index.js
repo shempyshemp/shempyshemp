@@ -10,6 +10,7 @@ const embedA = config.EmbedAuthor;
 const embedP = config.EmbedPfp;
 const embedC = config.EmbedColour;
 const prefix = config.prefix;
+
 client.on("message",async message=>{
     if(message.author.bot||message.type=="dm")return;
     var arg = message.content.toLowerCase().split(" ");
