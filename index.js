@@ -25,7 +25,7 @@ client.on('guildMemberAdd', member => {
     message.channel.send(welcomeEmbed);
   });
 
-    client.user.setActivity('games with ' + onlineCount + ' people' , { type: 'PLAYING' });
+    client.user.setActivity('Over Prett`s Art Cafe' , { type: 'WATCHING' });
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
