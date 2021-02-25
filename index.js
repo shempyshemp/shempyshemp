@@ -65,7 +65,6 @@ client.on("message",async message=>{
                         allow:["MANAGE_CHANNELS"]
                     }
               );
-            message.reply("i've made you a shop, check the shops category");
             message.guild.createChannel(message.author.username+"`s shop",{
                 type:"text",
                 parent:TicketCategory.id,
