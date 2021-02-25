@@ -1,6 +1,6 @@
-const Discord = require('discord.js')
-const client = new Discord.Client()
-const { MessageEmbed } = require('discord.js')
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const { MessageEmbed } = require('discord.js');
 const config = require("./config.json");
 const sleep = require('sleep.js');
 const func = require('./functions');
@@ -26,7 +26,7 @@ client.on('guildMemberAdd', member => {
   });
 
 client.on("ready", () => {
-    client.user.setActivity('with Pretts Art Cafe')
+    client.user.setActivity('over "+memberCount+" members in Prett`s Art Cafe' , { type: 'WATCHING' });
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
