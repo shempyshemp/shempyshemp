@@ -25,14 +25,12 @@ client.on('guildMemberAdd', member => {
     message.channel.send(welcomeEmbed);
   });
 
-client.on("ready", () => {
-    client.user.setActivity('with Pretts Art Cafe')
+    client.user.setActivity('games with ' + onlineCount + ' people' , { type: 'PLAYING' });
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
 client.on("ready",()=>{
     console.log("shop system is online!");
-    client.user.setActivity("development builds - v2");
 });
 
 client.on("message",async message=>{
