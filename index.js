@@ -31,15 +31,6 @@ client.on("ready", () => {
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
-    else if (command === 'setstatus') {
-        if (!args.length) {
-            return message.channel.send(`status cannot be null, ${message.author}!`);
-        }
-
-        message.channel.send(`> Set my status to ${args[0]}`);
-        client.user.setActivity('${args[0]}');
-    }
-
 client.on("message", async (message) => {
     const logging = client.channels.cache.get(config.LogChannel);
     const guild = client.guilds.cache.get(config.serverID);
@@ -182,7 +173,14 @@ client.on("message", async (message) => {
             }
         }
     }
+    if (command === 'status') {
+        if (!args.length) {
+            return message.channel.send(`status cannot be null, ${message.author}!`);
+        }
 
+        message.channel.send(`> Set my status to ${args[0]}`);
+        client.user.setActivity('${args[0]}');
+    }
     
     if (message.channel.type === "dm") {
         if (command === 'close' && findchannel) {
