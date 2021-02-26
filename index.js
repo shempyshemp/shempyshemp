@@ -31,7 +31,7 @@ client.on("ready", () => {
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
-    if (command === 'setstatus') {
+    else if (command === 'setstatus') {
         if (!args.length) {
             return message.channel.send(`status cannot be null, ${message.author}!`);
         }
