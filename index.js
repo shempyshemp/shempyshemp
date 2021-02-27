@@ -11,24 +11,6 @@ const embedP = config.EmbedPfp;
 const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
-if(command === `avatar`){
-    if(msg.channel.type === 'dm') return msg.channel.send("err")
-        let mentions = msg.mentions.members.first()
-        if(!mentions) {
-          let sicon = msg.author.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setImage(msg.author.avatarURL)
-          .setColor("#5074b3")
-          msg.channel.send({embed})
-        } else {
-          let sicon = mentions.user.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setColor("#5074b3")
-          .setImage(sicon)
-          msg.channel.send({embed})
-        }
-    };
-});
 
 
 client.on('guildMemberAdd', member => {
@@ -122,6 +104,24 @@ client.on("message", async (message) => {
         }
         message.delete()
     }
+    if(command === `avatar`){
+    if(msg.channel.type === 'dm') return msg.channel.send("err")
+        let mentions = msg.mentions.members.first()
+        if(!mentions) {
+          let sicon = msg.author.avatarURL
+          let embed = new Discord.RichEmbed()
+          .setImage(msg.author.avatarURL)
+          .setColor("#5074b3")
+          msg.channel.send({embed})
+        } else {
+          let sicon = mentions.user.avatarURL
+          let embed = new Discord.RichEmbed()
+          .setColor("#5074b3")
+          .setImage(sicon)
+          msg.channel.send({embed})
+        }
+    };
+});
     if (command === 'help') {
         const helpEmbed = new MessageEmbed()
             .setTitle(`__**${config["bot-name"]} - Help**__`)
