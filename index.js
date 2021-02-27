@@ -11,7 +11,7 @@ const embedP = config.EmbedPfp;
 const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
-const guild = client.guilds.get("798296513360298034");
+const guild = guilds.get("798296513360298034");
 setInterval(function () {
 var memberCount = guild.members.filter(member => !member.user.bot).size;  
 client.user.setActivity('over ${memberCount} members in Prett`s Art Cafe' , { type: 'WATCHING' });
