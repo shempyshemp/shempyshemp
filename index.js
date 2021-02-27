@@ -11,11 +11,25 @@ const embedP = config.EmbedPfp;
 const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
-const guild = client.guild.get("798296513360298034");
-setInterval(function () {
-var memberCount = guild.members.filter(member => !member.user.bot).size;  
-client.user.setActivity('over ${memberCount} members in Prett`s Art Cafe' , { type: 'WATCHING' });
-}, 1000);
+if(command === `avatar`){
+    if(msg.channel.type === 'dm') return msg.channel.send("err")
+        let mentions = msg.mentions.members.first()
+        if(!mentions) {
+          let sicon = msg.author.avatarURL
+          let embed = new Discord.RichEmbed()
+          .setImage(msg.author.avatarURL)
+          .setColor("#5074b3")
+          msg.channel.send({embed})
+        } else {
+          let sicon = mentions.user.avatarURL
+          let embed = new Discord.RichEmbed()
+          .setColor("#5074b3")
+          .setImage(sicon)
+          msg.channel.send({embed})
+        }
+    };
+});
+
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'welcomes');
