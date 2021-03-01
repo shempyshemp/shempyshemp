@@ -12,6 +12,9 @@ const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
 
+let myGuild = client.guilds.get("guilds_id_here");
+let memberCount = myGuild.memberCount;
+let memberCountChannel = myGuild.channels.get("channel_id_here");
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'welcomes');
@@ -27,7 +30,7 @@ client.on('guildMemberAdd', member => {
   });
 
 client.on("ready", () => {
-    client.user.setActivity('over Prett`s Art Cafe' , { type: 'WATCHING' });
+    client.user.setActivity(memberCount+' members in Prett`s Art Cafe' , { type: 'WATCHING' });
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
