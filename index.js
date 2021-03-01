@@ -27,7 +27,7 @@ client.on('guildMemberAdd', member => {
     message.channel.send(welcomeEmbed);
   });
 const activities_list = [
-    "${client.guilds.cache.size} members in Prett`s Art Cafe"
+    "unban n"
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
