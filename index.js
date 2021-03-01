@@ -12,7 +12,7 @@ const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
 
-let myGuild = client.guilds.get("guilds_id_here");
+let myGuild = cache.guilds.get("798296513360298034");
 let memberCount = myGuild.memberCount;
 let memberCountChannel = myGuild.channels.get("channel_id_here");
 
