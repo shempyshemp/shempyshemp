@@ -12,9 +12,7 @@ const embedC = config.EmbedColour;
 const prefix = config.prefix;
 
 
-let myGuild = cache.guilds.get("798296513360298034");
-let memberCount = myGuild.memberCount;
-let memberCountChannel = myGuild.channels.get("channel_id_here");
+
 
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === 'welcomes');
@@ -28,9 +26,19 @@ client.on('guildMemberAdd', member => {
     if (!channel) return;
     message.channel.send(welcomeEmbed);
   });
+const activities_list = [
+    "${client.guilds.cache.size} members in Prett`s Art Cafe"
+    ]; // creates an arraylist containing phrases you want your bot to switch through.
+
+bot.on('ready', () => {
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        bot.user.setActivity(activities_list[index] , { type: 'WATCHING' }); // sets bot's activities to one of the phrases in the arraylist.
+    }, 10000); // Runs this every 10 seconds.
+});
 
 client.on("ready", () => {
-    client.user.setActivity(memberCount+' members in Prett`s Art Cafe' , { type: 'WATCHING' });
+    client.user.setActivity('' , { type: 'WATCHING' });
     console.log(`${client.user.username}#${client.user.discriminator} has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
 });
 
